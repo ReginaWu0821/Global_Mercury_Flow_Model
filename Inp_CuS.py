@@ -1,0 +1,18 @@
+"""
+工作簿: Global_Hg_Flow/2.3 IND_NFMO_NFMS_CuS.xlsx
+工作表: 'Inp_CuS'
+已用区域: A1:N233
+合并单元格块数: 12
+首行预览: Country or Aera | Abbrev | AL_Loc (kt) | AL_Imp (kt) | AL_Production (kt) | AL_Loc_Pro (%) | AL_Imp_Pro (%) | HgCon_Loc (mg/kg) | HgCon_Imp (mg/kg) | ZnCon_Loc (%) | ZnCon_Imp (%) | HgInp (t) |  |  |  | 
+
+实现说明: 与 Pb 冶炼输入表结构一致；矩阵表名为 Inp_Matric_HgCu。
+"""
+
+import sys
+from pathlib import Path
+
+_REPO = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(_REPO / "Code"))
+from _sheet_formula_sync import sync_complex_formulas
+
+sync_complex_formulas(_REPO, "2.3 IND_NFMO_NFMS_CuS.xlsx", "Inp_CuS")
